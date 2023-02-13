@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -16,6 +17,11 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] float fadeSpeed;
     private float _durationTimer;
 
+    [SerializeField] float armor;
+    [SerializeField] float maxArmor;
+    [SerializeField] TextMeshProUGUI armorText;
+
+
     void Start()
     {
         health = maxHealth;
@@ -26,7 +32,12 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         health = Mathf.Clamp(health, 0, maxHealth);
+        armor = Mathf.Clamp(armor, 0, maxArmor);
+
         UpdateHealth();
+
+        
+
         if (damageOverlay.color.a > 0)
         {
             if (health < 30)
@@ -47,17 +58,70 @@ public class PlayerHealth : MonoBehaviour
     public void UpdateHealth()
     {
         healthText.text = health.ToString();
+        armorText.text = armor.ToString();
     }
 
     public void TakeDamage(float damage)
     {
-        health -= damage;
-        damageOverlay.color = new Color(damageOverlay.color.r, damageOverlay.color.g, damageOverlay.color.b, 1);
-        _durationTimer = 0;
+
+        if (armor > 0)
+        {
+            if (armor >= damage)
+            {
+                armor -= damage;
+            }
+            else if (armor < damage)
+            {
+                float remainingDamage = damage - armor;
+                armor = 0;
+                health -= remainingDamage;
+            }
+        }
+        else
+        {
+            health -= damage;
+            damageOverlay.color = new Color(damageOverlay.color.r, damageOverlay.color.g, damageOverlay.color.b, 1);
+            _durationTimer = 0;
+        }
+
+        if (health <= 0)
+        {
+            Debug.Log("Player Dead");
+            Scene currentScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(currentScene.buildIndex);
+        }
+
+        
     }
 
-    public void RestoreHealth(float healAmount)
+    public void RestoreHealth(float healAmount, GameObject pickup)
     {
-        health += healAmount;
+        
+        if (health < maxHealth)
+        {
+            health += healAmount;
+            Destroy(pickup);
+
+        }
+
+        if (health >= maxHealth)
+        {
+            health = maxHealth;
+        }
+    }
+
+    public void RestoreArmor(float armorAmount, GameObject pickup)
+    {
+
+        if (armor < maxArmor)
+        {
+            armor += armorAmount;
+            Destroy(pickup);
+        }
+
+        if (armor >= maxArmor)
+        {
+            armor = maxArmor;
+        }
     }
 }
