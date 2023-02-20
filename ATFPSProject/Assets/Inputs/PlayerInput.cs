@@ -80,6 +80,33 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""WeaponSelect1"",
+                    ""type"": ""Button"",
+                    ""id"": ""42c42611-1fb1-4880-b23f-9bb5fddc89c3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""WeaponSelect2"",
+                    ""type"": ""Button"",
+                    ""id"": ""888c873c-58e6-4cf3-b8fd-3ac56d2b6369"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Escape"",
+                    ""type"": ""Button"",
+                    ""id"": ""2cf440bf-278e-44d3-a7c4-4ab200e727fb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -190,6 +217,39 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Melee"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f9c7fe33-e0c0-47a3-a71c-8981b461a824"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""WeaponSelect1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""774b4921-b2f9-4bc1-81b6-ddfd008f412b"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""WeaponSelect2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""37900400-65b7-4660-9dbd-7c00f7ec6d9b"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Escape"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -739,6 +799,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_InGame_Interact = m_InGame.FindAction("Interact", throwIfNotFound: true);
         m_InGame_Shoot = m_InGame.FindAction("Shoot", throwIfNotFound: true);
         m_InGame_Melee = m_InGame.FindAction("Melee", throwIfNotFound: true);
+        m_InGame_WeaponSelect1 = m_InGame.FindAction("WeaponSelect1", throwIfNotFound: true);
+        m_InGame_WeaponSelect2 = m_InGame.FindAction("WeaponSelect2", throwIfNotFound: true);
+        m_InGame_Escape = m_InGame.FindAction("Escape", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -816,6 +879,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_InGame_Interact;
     private readonly InputAction m_InGame_Shoot;
     private readonly InputAction m_InGame_Melee;
+    private readonly InputAction m_InGame_WeaponSelect1;
+    private readonly InputAction m_InGame_WeaponSelect2;
+    private readonly InputAction m_InGame_Escape;
     public struct InGameActions
     {
         private @PlayerInput m_Wrapper;
@@ -826,6 +892,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_InGame_Interact;
         public InputAction @Shoot => m_Wrapper.m_InGame_Shoot;
         public InputAction @Melee => m_Wrapper.m_InGame_Melee;
+        public InputAction @WeaponSelect1 => m_Wrapper.m_InGame_WeaponSelect1;
+        public InputAction @WeaponSelect2 => m_Wrapper.m_InGame_WeaponSelect2;
+        public InputAction @Escape => m_Wrapper.m_InGame_Escape;
         public InputActionMap Get() { return m_Wrapper.m_InGame; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -853,6 +922,15 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Melee.started -= m_Wrapper.m_InGameActionsCallbackInterface.OnMelee;
                 @Melee.performed -= m_Wrapper.m_InGameActionsCallbackInterface.OnMelee;
                 @Melee.canceled -= m_Wrapper.m_InGameActionsCallbackInterface.OnMelee;
+                @WeaponSelect1.started -= m_Wrapper.m_InGameActionsCallbackInterface.OnWeaponSelect1;
+                @WeaponSelect1.performed -= m_Wrapper.m_InGameActionsCallbackInterface.OnWeaponSelect1;
+                @WeaponSelect1.canceled -= m_Wrapper.m_InGameActionsCallbackInterface.OnWeaponSelect1;
+                @WeaponSelect2.started -= m_Wrapper.m_InGameActionsCallbackInterface.OnWeaponSelect2;
+                @WeaponSelect2.performed -= m_Wrapper.m_InGameActionsCallbackInterface.OnWeaponSelect2;
+                @WeaponSelect2.canceled -= m_Wrapper.m_InGameActionsCallbackInterface.OnWeaponSelect2;
+                @Escape.started -= m_Wrapper.m_InGameActionsCallbackInterface.OnEscape;
+                @Escape.performed -= m_Wrapper.m_InGameActionsCallbackInterface.OnEscape;
+                @Escape.canceled -= m_Wrapper.m_InGameActionsCallbackInterface.OnEscape;
             }
             m_Wrapper.m_InGameActionsCallbackInterface = instance;
             if (instance != null)
@@ -875,6 +953,15 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Melee.started += instance.OnMelee;
                 @Melee.performed += instance.OnMelee;
                 @Melee.canceled += instance.OnMelee;
+                @WeaponSelect1.started += instance.OnWeaponSelect1;
+                @WeaponSelect1.performed += instance.OnWeaponSelect1;
+                @WeaponSelect1.canceled += instance.OnWeaponSelect1;
+                @WeaponSelect2.started += instance.OnWeaponSelect2;
+                @WeaponSelect2.performed += instance.OnWeaponSelect2;
+                @WeaponSelect2.canceled += instance.OnWeaponSelect2;
+                @Escape.started += instance.OnEscape;
+                @Escape.performed += instance.OnEscape;
+                @Escape.canceled += instance.OnEscape;
             }
         }
     }
@@ -1001,6 +1088,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
         void OnMelee(InputAction.CallbackContext context);
+        void OnWeaponSelect1(InputAction.CallbackContext context);
+        void OnWeaponSelect2(InputAction.CallbackContext context);
+        void OnEscape(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

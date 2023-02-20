@@ -1,0 +1,1082 @@
+fileFormatVersion: 2
+guid: b6e0b81fe516048489e4b714d36d3d60
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 25
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 7
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd2d4eb030aae434eb354d966b4dbd27
+      internalID: 1749321359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 8
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1844b677413d0e459cbf0cece0821f7
+      internalID: -1241655010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 8
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e062a44a6d365e24983050f317b604de
+      internalID: 161564324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 8
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f20faff1caef0664cab8762ee3665328
+      internalID: 1957087709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 8
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2e55db48e620b94281deeb043dd1d2b
+      internalID: 1159766897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 8
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ac7d8a998f1b944494eb41d4d5098df
+      internalID: -1690117005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 9
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3294b6625db5f844805f24d97812709
+      internalID: -1488831316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 8
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4a13d1f23424e1489a6f5968464416f
+      internalID: 1183566900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 8
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 101c2c96816bdc0478f0c68937198b7f
+      internalID: -141096467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 8
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54f74fa74f67bbf44add3397e1a1300a
+      internalID: -261663793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 8
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47e5fd28328e4b04d8ab3cde58c62b1d
+      internalID: 1319583131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 8
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b44030970c90344d90a33afcee9f8aa
+      internalID: 1456805079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 7
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84f4f16246f2c1643924752af75c5a72
+      internalID: 352438652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 7
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47e59a085194eac4e83d8c3e3f47f84c
+      internalID: -1363969564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 7
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b136dc7336406d47b411f1783a23666
+      internalID: 1047651313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 7
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51aa6612ce46a5f44aa55cb2826e8559
+      internalID: 1515115761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 7
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03eb0afceff59d842b3b8360af74e4b7
+      internalID: -1854492850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 9
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 484b8e3fff49be04eb3f9b8e174de037
+      internalID: -8331060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 9
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a1a34d5ff52cb04a8a0a9020820df89
+      internalID: 904413734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 9
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2220e0148a41254883e7d37e58b895d
+      internalID: -1919059163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 9
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51057b8d9ee8dd7449f81fc557a473e0
+      internalID: -1309919639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 9
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 163b81edac86f94448352d9c44773639
+      internalID: 1576575927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 9
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50f4b32a36f391c41b3e9e4e34632739
+      internalID: 867790028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 8
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04130ae3309b2f943a3ceaf1ffdfdc31
+      internalID: 1965863307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 8
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fe6494bf502f744ebe25494a334731c
+      internalID: -1987565989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 8
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89e61493e742a8846865f86d2c53e467
+      internalID: 1377114410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 7
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9365afd836542564488d0400353a9b28
+      internalID: -1310412271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 1033
+        y: 7
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fca257922ccc0924296f960f4203f81d
+      internalID: 1382957559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 7
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e94063f8becc854f863ee301ba46b25
+      internalID: 959854650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 7
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0f5846ef084d60498ac2ab5a97c529d
+      internalID: 13186812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 7
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3c912f8cc14e764e81c99a76d812b03
+      internalID: -871533041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 7
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 248a5e171e88b6545ba80591ba9e7b93
+      internalID: 251992681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 1223
+        y: 8
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d8f4a01bee7baa4681eb7b0c93c3926
+      internalID: -1076355836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 8
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52eb865984f8372418ddbef625553f52
+      internalID: 320592982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 1303
+        y: 8
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 322baf2d807283840b34c88d02f855a8
+      internalID: 2053947959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 7
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17cb16394f677124eb74b5f30055dd9d
+      internalID: 2088900879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_36
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 7
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9133ba72ebad19b4eb2a09a76428de03
+      internalID: 641704651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_37
+      rect:
+        serializedVersion: 2
+        x: 1431
+        y: 8
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a643d8908be42c4418a6b0d903b99e2b
+      internalID: 812039879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_38
+      rect:
+        serializedVersion: 2
+        x: 1471
+        y: 8
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91295ed08813d194bb5f986db56a9656
+      internalID: 1699988721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_39
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 8
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19fd760776fa86540a93b6e624a23542
+      internalID: 402447592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_40
+      rect:
+        serializedVersion: 2
+        x: 1552
+        y: 8
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f66e78a42928fd44848909a083f2192
+      internalID: -1455996873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoomGuyFaceSpriteSheet_41
+      rect:
+        serializedVersion: 2
+        x: 1594
+        y: 8
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9971bbe87dc6d284f8254f372199ee59
+      internalID: 542113331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: d0b32cb632e6e8846840b1036a2787fb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      DoomGuyFaceSpriteSheet_8: -141096467
+      DoomGuyFaceSpriteSheet_16: -1854492850
+      DoomGuyFaceSpriteSheet_9: -261663793
+      DoomGuyFaceSpriteSheet_31: 251992681
+      DoomGuyFaceSpriteSheet_17: -8331060
+      DoomGuyFaceSpriteSheet_7: 1183566900
+      DoomGuyFaceSpriteSheet_6: -1488831316
+      DoomGuyFaceSpriteSheet_34: 2053947959
+      DoomGuyFaceSpriteSheet_10: 1319583131
+      DoomGuyFaceSpriteSheet_13: -1363969564
+      DoomGuyFaceSpriteSheet_40: -1455996873
+      DoomGuyFaceSpriteSheet_28: 959854650
+      DoomGuyFaceSpriteSheet_5: -1690117005
+      DoomGuyFaceSpriteSheet_0: 1749321359
+      DoomGuyFaceSpriteSheet_37: 812039879
+      DoomGuyFaceSpriteSheet_18: 904413734
+      DoomGuyFaceSpriteSheet_2: 161564324
+      DoomGuyFaceSpriteSheet_32: -1076355836
+      DoomGuyFaceSpriteSheet_1: -1241655010
+      DoomGuyFaceSpriteSheet_12: 352438652
+      DoomGuyFaceSpriteSheet_24: -1987565989
+      DoomGuyFaceSpriteSheet_29: 13186812
+      DoomGuyFaceSpriteSheet_35: 2088900879
+      DoomGuyFaceSpriteSheet_33: 320592982
+      DoomGuyFaceSpriteSheet_36: 641704651
+      DoomGuyFaceSpriteSheet_22: 867790028
+      DoomGuyFaceSpriteSheet_25: 1377114410
+      DoomGuyFaceSpriteSheet_14: 1047651313
+      DoomGuyFaceSpriteSheet_30: -871533041
+      DoomGuyFaceSpriteSheet_41: 542113331
+      DoomGuyFaceSpriteSheet_3: 1957087709
+      DoomGuyFaceSpriteSheet_23: 1965863307
+      DoomGuyFaceSpriteSheet_11: 1456805079
+      DoomGuyFaceSpriteSheet_26: -1310412271
+      DoomGuyFaceSpriteSheet_15: 1515115761
+      DoomGuyFaceSpriteSheet_4: 1159766897
+      DoomGuyFaceSpriteSheet_20: -1309919639
+      DoomGuyFaceSpriteSheet_21: 1576575927
+      DoomGuyFaceSpriteSheet_38: 1699988721
+      DoomGuyFaceSpriteSheet_39: 402447592
+      DoomGuyFaceSpriteSheet_19: -1919059163
+      DoomGuyFaceSpriteSheet_27: 1382957559
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -93,8 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 33757392117370637}
-  - component: {fileID: 33757392117370635}
-  - component: {fileID: 33757392117370634}
+  - component: {fileID: 5244781986435467537}
   m_Layer: 0
   m_Name: PlayerModel
   m_TagString: Untagged
@@ -117,56 +116,20 @@ Transform:
   m_Father: {fileID: 33757392713825438}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &33757392117370635
-MeshFilter:
+--- !u!136 &5244781986435467537
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33757392117370636}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &33757392117370634
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 33757392117370636}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 3f8640b466d728f4cba54741ba247254, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &33757392713825440
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,6 +148,7 @@ GameObject:
   - component: {fileID: 1032933922490589634}
   - component: {fileID: 5384938325839343253}
   - component: {fileID: 7845784213599914514}
+  - component: {fileID: 5287190655493256672}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -318,9 +282,11 @@ MonoBehaviour:
   damageOverlay: {fileID: 0}
   duration: 2
   fadeSpeed: 1.5
-  armor: 50
+  armor: 40
   maxArmor: 100
   armorText: {fileID: 0}
+  healthPickupSound: {fileID: 8300000, guid: 156452dc6cf9e6643a1189021d22b39b, type: 3}
+  armorPickupSound: {fileID: 8300000, guid: 156452dc6cf9e6643a1189021d22b39b, type: 3}
 --- !u!114 &5384938325839343253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,7 +317,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -435,3 +401,46 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5287190655493256672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33757392713825440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f2d1f95f9e8c224a813b8fe5a57d379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedGun: 0
+  shotgunUIObject: {fileID: 0}
+  pistolUIObject: {fileID: 0}
+  bulletHole: {fileID: 1000010844420130, guid: 4edabb1c0dde62743b137378c7d22980, type: 3}
+  promptText: {fileID: 0}
+  shotgunCurrentAmmo: 40
+  shotgunMagSize: 2
+  shotgunAmmoInMag: 2
+  shotgunTotalAmmoCap: 50
+  shotgunDamage: 50
+  shotgunShotsPerFire: 2
+  shotgunFireDelay: 2
+  shotgunReloadTime: 1
+  pistolCurrentAmmo: 35
+  pistolMagSize: 15
+  pistolAmmoInMag: 15
+  pistolTotalAmmoCap: 150
+  pistolDamage: 10
+  pistolShotsPerFire: 1
+  pistolFireDelay: 1
+  pistolReloadTime: 1
+  totalShotgunAmmoText: {fileID: 0}
+  currentShotgunAmmoText: {fileID: 0}
+  totalPistolAmmoText: {fileID: 0}
+  currentPistolAmmoText: {fileID: 0}
+  ammoText: {fileID: 0}
+  shotgunAnimator: {fileID: 0}
+  pistolAnimator: {fileID: 0}
+  shotgunShotSound: {fileID: 8300000, guid: 9a64fa01c1dfe0d4dbed0596fd2871d9, type: 3}
+  pistolShotSound: {fileID: 8300000, guid: 039e7f26480afba469558f98739147bf, type: 3}
+  ammoPickupSound: {fileID: 8300000, guid: 156452dc6cf9e6643a1189021d22b39b, type: 3}

@@ -7,19 +7,10 @@ public class ItemPickup : MonoBehaviour
 
     [SerializeField] bool isHealth;
     [SerializeField] bool isArmor;
-    [SerializeField] bool isAmmo;
+    [SerializeField] bool isSlugs;
+    [SerializeField] bool isBullets;
 
     [SerializeField] float amount;
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -35,9 +26,14 @@ public class ItemPickup : MonoBehaviour
                 other.GetComponent<PlayerHealth>().RestoreArmor(amount, this.gameObject);
             }
 
-            if (isAmmo)
+            if (isSlugs)
             {
-                other.GetComponent<PlayerCombat>().RestoreAmmo(amount, this.gameObject);
+                other.GetComponent<GunManager>().RestoreShotgunAmmo(amount, this.gameObject);
+            }
+            
+            if (isBullets)
+            {
+                other.GetComponent<GunManager>().RestorePistolAmmo(amount, this.gameObject);
             }
 
             

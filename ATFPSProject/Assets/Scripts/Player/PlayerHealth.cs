@@ -21,10 +21,13 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] float maxArmor;
     [SerializeField] TextMeshProUGUI armorText;
 
+    [SerializeField] AudioClip healthPickupSound;
+    [SerializeField] AudioClip armorPickupSound;
+
 
     void Start()
     {
-        health = maxHealth;
+        //health = maxHealth;
         damageOverlay.color = new Color(damageOverlay.color.r, damageOverlay.color.g, damageOverlay.color.b, 0);
     }
 
@@ -100,6 +103,7 @@ public class PlayerHealth : MonoBehaviour
         if (health < maxHealth)
         {
             health += healAmount;
+            GetComponent<AudioSource>().PlayOneShot(healthPickupSound);
             Destroy(pickup);
 
         }
@@ -116,6 +120,7 @@ public class PlayerHealth : MonoBehaviour
         if (armor < maxArmor)
         {
             armor += armorAmount;
+            GetComponent<AudioSource>().PlayOneShot(armorPickupSound);
             Destroy(pickup);
         }
 
