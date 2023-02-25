@@ -35,15 +35,24 @@ public class Enemy : MonoBehaviour
     public bool playerInSightRange;
     public bool playerInAttackRange;
 
+    public GameObject projectile;
+    public float projectileSpeed;
+
+    public AudioClip attackSound;
+    public AudioClip sightSound;
+    public AudioClip injurySound;
+    public AudioClip deathSound;
+
+    private AudioSource audioSource;
+
     void Start()
     {
-        health = 100;
 
         levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
         spriteAnim = GetComponentInChildren<Animator>();
         angleToPlayer = GetComponent<AngleToPlayer>();
 
-        
+        audioSource = GetComponent<AudioSource>();
 
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
@@ -77,21 +86,25 @@ public class Enemy : MonoBehaviour
             }
         }
         
-        if (health <= 0)
+        if (health <= 0 && !isDead)
         {
+            audioSource.PlayOneShot(deathSound);
             isDead = true;
             
         }
         if (isDead)
         {
+            agent.SetDestination(transform.position);
             if (addedScore == false)
             {
                 levelManager.AddToCurrentScore(killScore);
                 addedScore = true;
             }
             
-            CapsuleCollider collider = GameObject.Find("EnemyCollider").GetComponent<CapsuleCollider>();
+            
+            CapsuleCollider collider = transform.Find("EnemySprite").GetComponent<CapsuleCollider>();
             collider.enabled = false;
+            //Debug.Log(collider.enabled);
             transform.position = Vector3.Lerp(transform.position, deathPos, 1f * Time.deltaTime);
             spriteAnim.SetBool("isDead", true);
 
@@ -101,8 +114,14 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        
         health -= damage;
-        Debug.Log("Enemy Health = " + health);
+
+        if (health >= 0 + damage)
+        {
+            audioSource.PlayOneShot(injurySound);
+        }
+        //Debug.Log("Enemy Health = " + health);
     }
 
     private void Patrolling()
@@ -149,7 +168,11 @@ public class Enemy : MonoBehaviour
 
         if (!alreadyAttacked)
         {
-
+            spriteAnim.SetTrigger("Attack");
+            audioSource.PlayOneShot(attackSound);
+            Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+            rb.AddForce(transform.forward * projectileSpeed, ForceMode.Impulse);
+            rb.AddForce(transform.up, ForceMode.Impulse);
 
 
             alreadyAttacked = true;
@@ -160,5 +183,18 @@ public class Enemy : MonoBehaviour
     private void ResetAttack()
     {
         alreadyAttacked = false;
+    }
+
+    public bool IsItDead()
+    {
+        return isDead;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(transform.position, attackRange);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(transform.position, sightRange);
     }
 }

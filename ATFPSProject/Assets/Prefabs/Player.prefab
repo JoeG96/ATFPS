@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 5244781986435467537}
   m_Layer: 0
   m_Name: PlayerModel
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -287,6 +287,7 @@ MonoBehaviour:
   armorText: {fileID: 0}
   healthPickupSound: {fileID: 8300000, guid: 156452dc6cf9e6643a1189021d22b39b, type: 3}
   armorPickupSound: {fileID: 8300000, guid: 156452dc6cf9e6643a1189021d22b39b, type: 3}
+  playerDamageSound: {fileID: 0}
 --- !u!114 &5384938325839343253
 MonoBehaviour:
   m_ObjectHideFlags: 0

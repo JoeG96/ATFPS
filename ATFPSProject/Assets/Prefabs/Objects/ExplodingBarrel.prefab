@@ -69,7 +69,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   spriteObject: {fileID: 4012924226103427599}
-  explosionClip: {fileID: 8300000, guid: ef1d3f33ea9114841bdb3eed2292e007, type: 3}
+  explosionClip: {fileID: 8300000, guid: cf59b421287127c45a4c6ce7366d923b, type: 3}
   audioSource: {fileID: 3229446588204057942}
 --- !u!82 &3229446588204057942
 AudioSource:

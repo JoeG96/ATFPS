@@ -65,7 +65,7 @@ public class AngleToPlayer : MonoBehaviour
         }
 
         //Backward Angles
-        if (angle <= 157.5f || angle >= 157.5f)
+        if (angle <= -157.5f || angle >= 157.5f)
         {
             return 4;
         }

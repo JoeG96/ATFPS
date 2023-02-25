@@ -11,6 +11,7 @@ public class ManageMenu : MonoBehaviour
     [Header("Button Canvases")]
     [SerializeField] GameObject levelSelectCanvas;
     [SerializeField] GameObject mainMenuCanvas;
+    [SerializeField] GameObject backgroundCanvas;
 
 
     void Start()
@@ -40,14 +41,27 @@ public class ManageMenu : MonoBehaviour
         levelSelectCanvas.SetActive(false);
     }
 
+    public void EnableBackgroundCanvas()
+    {
+        backgroundCanvas.SetActive(true);
+    }
+    
+    public void DisableBackgroundCanvas()
+    {
+        backgroundCanvas.SetActive(false);
+    }
+
     public void LoadLevel(string sceneName)
     {
         SceneManager.LoadSceneAsync(sceneName);
     }
 
+
+
     public void OpenLevelSelect()
     {
         DisableMainMenuButtons();
+        DisableBackgroundCanvas();
         EnableLevelSelectButtons();
     }
 
@@ -55,6 +69,7 @@ public class ManageMenu : MonoBehaviour
     {
         DisableLevelSelectButtons();
         EnableMainMenuButtons();
+        EnableBackgroundCanvas();
     }
 
 }

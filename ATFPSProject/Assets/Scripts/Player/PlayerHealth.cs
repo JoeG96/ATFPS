@@ -23,11 +23,12 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField] AudioClip healthPickupSound;
     [SerializeField] AudioClip armorPickupSound;
+    [SerializeField] AudioClip playerDamageSound;
 
 
     void Start()
     {
-        //health = maxHealth;
+        health = maxHealth;
         damageOverlay.color = new Color(damageOverlay.color.r, damageOverlay.color.g, damageOverlay.color.b, 0);
     }
 
@@ -83,6 +84,7 @@ public class PlayerHealth : MonoBehaviour
         else
         {
             health -= damage;
+            
             damageOverlay.color = new Color(damageOverlay.color.r, damageOverlay.color.g, damageOverlay.color.b, 1);
             _durationTimer = 0;
         }
@@ -93,8 +95,9 @@ public class PlayerHealth : MonoBehaviour
             Scene currentScene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(currentScene.buildIndex);
         }
+        GetComponent<AudioSource>().PlayOneShot(playerDamageSound);
 
-        
+
     }
 
     public void RestoreHealth(float healAmount, GameObject pickup)

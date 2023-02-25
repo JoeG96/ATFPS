@@ -164,14 +164,14 @@ public class GunManager : MonoBehaviour
 
                 if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Enemy"))
                 {
-                    Debug.Log("Enemy Hit");
-                    Debug.Log(hit.collider.gameObject.name);
+                    //Debug.Log("Enemy Hit");
+                    //Debug.Log(hit.collider.gameObject.name);
                     hit.collider.gameObject.GetComponentInParent<Enemy>().TakeDamage(shotgunDamage);
                 }
 
                 if (hit.collider.gameObject.layer == LayerMask.NameToLayer("DamageObject"))
                 {
-                    Debug.Log(hit.collider.gameObject.name);
+                    //Debug.Log(hit.collider.gameObject.name);
                     hit.collider.gameObject.GetComponent<BarrelExplosion>().TakeDamage(shotgunDamage);
                 }
             }
@@ -215,14 +215,14 @@ public class GunManager : MonoBehaviour
 
                 if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Enemy"))
                 {
-                    Debug.Log("Enemy Hit");
-                    Debug.Log(hit.collider.gameObject.name);
+                    //Debug.Log("Enemy Hit");
+                    //Debug.Log(hit.collider.gameObject.name);
                     hit.collider.gameObject.GetComponentInParent<Enemy>().TakeDamage(pistolDamage);
                 }
 
                 if (hit.collider.gameObject.layer == LayerMask.NameToLayer("DamageObject"))
                 {
-                    Debug.Log(hit.collider.gameObject.name);
+                    //Debug.Log(hit.collider.gameObject.name);
                     hit.collider.gameObject.GetComponent<BarrelExplosion>().TakeDamage(pistolDamage);
                 }
             }
