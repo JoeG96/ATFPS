@@ -145,7 +145,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHealth: 0
   isArmor: 0
-  isAmmo: 1
+  isSlugs: 0
+  isBullets: 1
   amount: 20
 --- !u!114 &6914245643694956321
 MonoBehaviour:
