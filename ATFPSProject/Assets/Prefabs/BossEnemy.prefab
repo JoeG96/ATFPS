@@ -28,11 +28,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3775156652199460835}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.231, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.23099995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 1692201895461748768}
   m_Father: {fileID: 3775156653125907730}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -156,13 +157,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3775156653125907730}
-  - component: {fileID: 3775156653125907731}
+  - component: {fileID: 5047602946930348309}
   - component: {fileID: 3775156653125907728}
   - component: {fileID: 3775156653125907729}
   - component: {fileID: 3775156653125907742}
   m_Layer: 7
   m_Name: BossEnemy
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -183,7 +184,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3775156653125907731
+--- !u!114 &5047602946930348309
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,12 +193,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3775156653125907743}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0308a113c47b08147b5b6ae714dfb785, type: 3}
+  m_Script: {fileID: 11500000, guid: 4454838e11402ac40bbb7d2df18f65d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 300
+  health: 500
   killScore: 1000
-  agent: {fileID: 3775156653125907729}
   player: {fileID: 0}
   groundLayer:
     serializedVersion: 2
@@ -205,18 +205,19 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 512
+  agent: {fileID: 3775156653125907729}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointSet: 0
-  walkPointRange: 5
-  timeBetweenAttacks: 3
-  alreadyAttacked: 0
-  sightRange: 50
-  attackRange: 40
+  walkPointRange: 10
+  sightRange: 40
+  attackRange: 20
   playerInSightRange: 0
   playerInAttackRange: 0
-  projectile: {fileID: 5881640160229945471, guid: 52062bb598684784bb2d1655179d330f, type: 3}
-  projectileSpeed: 20
-  attackSound: {fileID: 8300000, guid: 61912de321025874ca92012f1068d73a, type: 3}
+  shouldShoot: 1
+  fireRate: 1
+  bullet: {fileID: 6362725208486473944, guid: 206752ab346eaf6479e64628a9a1f24e, type: 3}
+  firePoint: {fileID: 1692201895461748768}
+  attackSound: {fileID: 8300000, guid: 161eaadc8d7cd0f49bc78223f7181231, type: 3}
   sightSound: {fileID: 8300000, guid: 13e3bde6d0c2ec640a86ec41baa449a4, type: 3}
   injurySound: {fileID: 8300000, guid: 575465da3631c5f40994f172921f868b, type: 3}
   deathSound: {fileID: 8300000, guid: 5fb2965cab162ac478fa183c0bf96d23, type: 3}
@@ -267,7 +268,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.01
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -351,3 +352,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &5357698401693132627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1692201895461748768}
+  m_Layer: 7
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1692201895461748768
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5357698401693132627}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.547}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3775156652199460834}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

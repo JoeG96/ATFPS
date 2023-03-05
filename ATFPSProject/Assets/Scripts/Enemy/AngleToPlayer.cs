@@ -13,8 +13,6 @@ public class AngleToPlayer : MonoBehaviour
     public int lastIndex;
 
     private SpriteRenderer spriteRenderer;
-    //public SpriteRenderer spriteRenderer;
-    //public Sprite[] sprites;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +22,7 @@ public class AngleToPlayer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         targetPos = new Vector3(player.position.x, transform.position.y, player.position.z);
         targetDir = targetPos - transform.position;
@@ -41,7 +39,6 @@ public class AngleToPlayer : MonoBehaviour
 
         lastIndex = GetIndex(angle);
 
-        //spriteRenderer.sprite = sprites[lastIndex];
     }
 
     private int GetIndex(float angle)
@@ -77,7 +74,7 @@ public class AngleToPlayer : MonoBehaviour
         {
             return 2;
         }
-        if (angle >= -67.5f && angle < -22.5f)
+        if (angle >= -67.5f && angle <= 22.5f)
         {
             return 1;
         }

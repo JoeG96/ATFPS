@@ -7,11 +7,11 @@ public class DoorOpenOnKill : MonoBehaviour
 
     [SerializeField] Animator doorAnim;
     [SerializeField] GameObject enemyToKill;
-    private Enemy enemyScript;
+    private EnemyController enemyScript;
 
     void Start()
     {
-        enemyScript = enemyToKill.GetComponent<Enemy>();
+        enemyScript = enemyToKill.GetComponent<EnemyController>();
     }
 
     void FixedUpdate()

@@ -32,7 +32,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5860118725536441691}
   m_Father: {fileID: 1864788440127970046}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -156,7 +157,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1864788440127970046}
-  - component: {fileID: 1864788440127970045}
+  - component: {fileID: 8006365284329334986}
   - component: {fileID: 1864788440127970042}
   - component: {fileID: 1864788440127970041}
   - component: {fileID: 1325183058432697239}
@@ -183,7 +184,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1864788440127970045
+--- !u!114 &8006365284329334986
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,12 +193,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1864788440127970032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0308a113c47b08147b5b6ae714dfb785, type: 3}
+  m_Script: {fileID: 11500000, guid: 4454838e11402ac40bbb7d2df18f65d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
   killScore: 100
-  agent: {fileID: 1864788440127970041}
   player: {fileID: 0}
   groundLayer:
     serializedVersion: 2
@@ -205,17 +205,18 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 512
+  agent: {fileID: 1864788440127970041}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointSet: 0
   walkPointRange: 10
-  timeBetweenAttacks: 2
-  alreadyAttacked: 0
-  sightRange: 10
-  attackRange: 10
+  sightRange: 25
+  attackRange: 20
   playerInSightRange: 0
   playerInAttackRange: 0
-  projectile: {fileID: 5881640160229945471, guid: bd35226446d922e419ae94abf65d1eca, type: 3}
-  projectileSpeed: 20
+  shouldShoot: 1
+  fireRate: 0.5
+  bullet: {fileID: 6362725208486473944, guid: 6a25885b70d37a348bfc5748902d3d84, type: 3}
+  firePoint: {fileID: 5860118725536441691}
   attackSound: {fileID: 8300000, guid: 6de31fc014250f34d9e551968ab3f62c, type: 3}
   sightSound: {fileID: 8300000, guid: 8f9f4f92abc4b12449dd61178aef21ad, type: 3}
   injurySound: {fileID: 8300000, guid: cb4b2b4598f405e4aab8c1d9779e889b, type: 3}
@@ -267,7 +268,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.01
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -351,3 +352,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &3965768770912443487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5860118725536441691}
+  m_Layer: 7
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5860118725536441691
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3965768770912443487}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.318}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1864788439431430300}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

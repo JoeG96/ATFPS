@@ -132,4 +132,9 @@ public class PlayerHealth : MonoBehaviour
             armor = maxArmor;
         }
     }
+
+    public float GetHealth()
+    {
+        return health;
+    }
 }

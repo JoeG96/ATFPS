@@ -78,6 +78,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "WeaponSelect3",
+                    "type": "Button",
+                    "id": "b59740f2-5431-483d-8731-1c26834f4482",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Escape",
                     "type": "Button",
                     "id": "2cf440bf-278e-44d3-a7c4-4ab200e727fb",
@@ -228,6 +237,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Escape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8d1b726e-3dce-46d2-9d2c-58de52177f56",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WeaponSelect3",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

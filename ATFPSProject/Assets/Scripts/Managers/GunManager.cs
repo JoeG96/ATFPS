@@ -10,14 +10,16 @@ public class GunManager : MonoBehaviour
     public enum gunSelecter
     {
         Pistol,
-        Shotgun
+        Shotgun,
+        RocketLauncher
     }
     public gunSelecter selectedGun;
 
     [SerializeField] GameObject shotgunUIObject;
     [SerializeField] GameObject pistolUIObject;
+    [SerializeField] GameObject rocketLauncherUIObject;
 
-    
+    [SerializeField] HudWeaponManager hudWeaponManager;
     
     [SerializeField] GameObject bulletHole;
 
@@ -32,7 +34,7 @@ public class GunManager : MonoBehaviour
     [SerializeField] float shotgunTotalAmmoCap = 50;
     [SerializeField] float shotgunDamage = 50;
     [SerializeField] float shotgunShotsPerFire = 2;
-    [SerializeField] float shotgunFireDelay = 0.2f;
+    //[SerializeField] float shotgunFireDelay = 0.2f;
     [SerializeField] float shotgunReloadTime = 1;
 
     [Header("Pistol Stats")]
@@ -42,8 +44,17 @@ public class GunManager : MonoBehaviour
     [SerializeField] float pistolTotalAmmoCap = 150;
     [SerializeField] float pistolDamage = 10;
     [SerializeField] float pistolShotsPerFire = 1;
-    [SerializeField] float pistolFireDelay = 0f;
+    //[SerializeField] float pistolFireDelay = 0f;
     [SerializeField] float pistolReloadTime = 2;
+    
+    [Header("Rocket Launcher Stats")]
+    [SerializeField] float rocketLauncherCurrentAmmo = 20;
+    [SerializeField] float rocketLauncherMagSize = 5;
+    [SerializeField] float rocketLauncherAmmoInMag = 5;
+    [SerializeField] float rocketLauncherTotalAmmoCap = 150;
+    [SerializeField] float rocketLauncherDamage = 100;
+    [SerializeField] float rocketLauncherShotsPerFire = 1;
+    [SerializeField] float rocketLauncherReloadTime = 2;
 
     private bool readyToShoot;
 
@@ -53,17 +64,25 @@ public class GunManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI currentShotgunAmmoText;
     [SerializeField] TextMeshProUGUI totalPistolAmmoText;
     [SerializeField] TextMeshProUGUI currentPistolAmmoText;
+    [SerializeField] TextMeshProUGUI totalRocketLauncherAmmoText;
+    [SerializeField] TextMeshProUGUI currentRocketLauncherAmmoText;
     
     [SerializeField] TextMeshProUGUI ammoText;
 
     [Header("Animators")]
     [SerializeField] Animator shotgunAnimator;
     [SerializeField] Animator pistolAnimator;
+    [SerializeField] Animator rocketLauncherAnimator;
 
     [Header("Audio")]
     [SerializeField] AudioClip shotgunShotSound;
     [SerializeField] AudioClip pistolShotSound;
+    [SerializeField] AudioClip rocketLauncherShotSound;
     [SerializeField] AudioClip ammoPickupSound;
+
+    [Header("Objects")]
+    [SerializeField] GameObject rocketObject;
+    [SerializeField] Transform firePoint;
  
     void Awake()
     {
@@ -83,6 +102,11 @@ public class GunManager : MonoBehaviour
                     totalShotgunAmmoText.text = "/" + shotgunTotalAmmoCap.ToString();
                 }
                 break;
+            case gunSelecter.RocketLauncher:
+                {
+                    totalRocketLauncherAmmoText.text = "/" + rocketLauncherTotalAmmoCap.ToString();
+                }
+                break;
         }
         GetComponent<AudioSource>().Stop();
         readyToShoot = true;
@@ -96,12 +120,24 @@ public class GunManager : MonoBehaviour
                 {
                     shotgunUIObject.SetActive(false);
                     pistolUIObject.SetActive(true);
+                    rocketLauncherUIObject.SetActive(false);
+                    hudWeaponManager.SetUIWeapon("Pistol");
                 }
                 break;
             case gunSelecter.Shotgun:
                 {
                     shotgunUIObject.SetActive(true);
                     pistolUIObject.SetActive(false);
+                    rocketLauncherUIObject.SetActive(false);
+                    hudWeaponManager.SetUIWeapon("Shotgun");
+                }
+                break;
+            case gunSelecter.RocketLauncher:
+                {
+                    shotgunUIObject.SetActive(false);
+                    pistolUIObject.SetActive(false);
+                    rocketLauncherUIObject.SetActive(true);
+                    hudWeaponManager.SetUIWeapon("RocketLauncher");
                 }
                 break;
         }
@@ -123,9 +159,16 @@ public class GunManager : MonoBehaviour
                     ammoText.text = shotgunAmmoInMag.ToString();
                 }
                 break;
+            case gunSelecter.RocketLauncher:
+                {
+
+                    ammoText.text = rocketLauncherAmmoInMag.ToString();
+                }
+                break;
         }
         currentPistolAmmoText.text = pistolCurrentAmmo.ToString();
         currentShotgunAmmoText.text = shotgunCurrentAmmo.ToString();
+        currentRocketLauncherAmmoText.text = rocketLauncherCurrentAmmo.ToString();
     }
 
     public void ShootWeapon()
@@ -142,6 +185,11 @@ public class GunManager : MonoBehaviour
                 case gunSelecter.Shotgun:
                     {
                         ShootShotgun();
+                    }
+                    break;
+                case gunSelecter.RocketLauncher:
+                    {
+                        ShootRocketLauncher();
                     }
                     break;
             }
@@ -166,7 +214,16 @@ public class GunManager : MonoBehaviour
                 {
                     //Debug.Log("Enemy Hit");
                     //Debug.Log(hit.collider.gameObject.name);
-                    hit.collider.gameObject.GetComponentInParent<Enemy>().TakeDamage(shotgunDamage);
+                    if (hit.collider.gameObject.GetComponentInParent<EnemyController>() != null)
+                    {
+                        hit.collider.gameObject.GetComponentInParent<EnemyController>().TakeDamage(shotgunDamage);
+                    }
+                    else
+                    {
+                        hit.collider.gameObject.GetComponentInParent<EnemyController>().TakeDamage(shotgunDamage);
+                    }
+                    
+                    
                 }
 
                 if (hit.collider.gameObject.layer == LayerMask.NameToLayer("DamageObject"))
@@ -217,7 +274,15 @@ public class GunManager : MonoBehaviour
                 {
                     //Debug.Log("Enemy Hit");
                     //Debug.Log(hit.collider.gameObject.name);
-                    hit.collider.gameObject.GetComponentInParent<Enemy>().TakeDamage(pistolDamage);
+                    if (hit.collider.gameObject.GetComponentInParent<EnemyController>() != null)
+                    {
+                        hit.collider.gameObject.GetComponentInParent<EnemyController>().TakeDamage(pistolDamage);
+                    }
+                    else
+                    {
+                        hit.collider.gameObject.GetComponentInParent<EnemyController>().TakeDamage(pistolDamage);
+                    }
+                    
                 }
 
                 if (hit.collider.gameObject.layer == LayerMask.NameToLayer("DamageObject"))
@@ -247,6 +312,37 @@ public class GunManager : MonoBehaviour
             }
         }
     }
+    
+    public void ShootRocketLauncher()
+    {
+        if (rocketLauncherAmmoInMag > 0)
+        {
+
+            if (rocketLauncherAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !rocketLauncherAnimator.IsInTransition(0))
+            {
+                rocketLauncherAnimator.SetTrigger("Shoot");
+                Instantiate(rocketObject, firePoint.position, firePoint.rotation);
+                GetComponent<AudioSource>().PlayOneShot(rocketLauncherShotSound, 0.5f);
+            }
+            rocketLauncherAmmoInMag -= rocketLauncherShotsPerFire;         
+        }
+
+        if (rocketLauncherAmmoInMag <= 0)
+        {
+            rocketLauncherAmmoInMag = 0;
+            StartCoroutine("Reload", rocketLauncherReloadTime);
+            if (rocketLauncherCurrentAmmo >= rocketLauncherMagSize)
+            {
+                rocketLauncherCurrentAmmo -= rocketLauncherMagSize;
+                rocketLauncherAmmoInMag += rocketLauncherMagSize;
+            }
+            else
+            {
+                rocketLauncherAmmoInMag += rocketLauncherCurrentAmmo;
+                rocketLauncherCurrentAmmo -= rocketLauncherCurrentAmmo;
+            }
+        }
+    }
 
     IEnumerator Reload(float reloadTime)
     {
@@ -270,6 +366,11 @@ public class GunManager : MonoBehaviour
     public void SetWeaponToShotgun()
     {
         selectedGun = gunSelecter.Shotgun;
+    }
+    
+    public void SetWeaponToRocketLauncher()
+    {
+        selectedGun = gunSelecter.RocketLauncher;
     }
 
     public void RestorePistolAmmo(float amount, GameObject gameObject)
@@ -310,6 +411,29 @@ public class GunManager : MonoBehaviour
             else
             {
                 shotgunCurrentAmmo += amount;
+            }
+            GetComponent<AudioSource>().PlayOneShot(ammoPickupSound);
+            Destroy(gameObject);
+        }
+        else
+        {
+            return;
+        }
+    }    
+    
+    public void RestoreRocketLauncherAmmo(float amount, GameObject gameObject)
+    {
+        float remainingAmmo = rocketLauncherTotalAmmoCap - rocketLauncherCurrentAmmo;
+
+        if (rocketLauncherCurrentAmmo <= rocketLauncherTotalAmmoCap)
+        { 
+            if (remainingAmmo <= amount)
+            {
+                rocketLauncherCurrentAmmo += remainingAmmo;
+            }
+            else
+            {
+                rocketLauncherCurrentAmmo += amount;
             }
             GetComponent<AudioSource>().PlayOneShot(ammoPickupSound);
             Destroy(gameObject);

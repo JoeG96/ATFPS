@@ -29,6 +29,7 @@ public class InputManager : MonoBehaviour
         _inGame.Shoot.performed += ctx => _pGunManager.ShootWeapon();
         _inGame.WeaponSelect1.performed += ctx => _pGunManager.SetWeaponToPistol();
         _inGame.WeaponSelect2.performed += ctx => _pGunManager.SetWeaponToShotgun();
+        _inGame.WeaponSelect3.performed += ctx => _pGunManager.SetWeaponToRocketLauncher();
         _inGame.Escape.performed += ctx => _levelManager.PauseGame();
 
         Cursor.lockState = CursorLockMode.Locked;

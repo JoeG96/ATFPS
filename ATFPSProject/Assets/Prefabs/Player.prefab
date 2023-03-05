@@ -170,6 +170,7 @@ Transform:
   m_Children:
   - {fileID: 33757390759456906}
   - {fileID: 33757392117370637}
+  - {fileID: 812290100562991788}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -417,6 +418,7 @@ MonoBehaviour:
   selectedGun: 0
   shotgunUIObject: {fileID: 0}
   pistolUIObject: {fileID: 0}
+  rocketLauncherUIObject: {fileID: 0}
   bulletHole: {fileID: 1000010844420130, guid: 4edabb1c0dde62743b137378c7d22980, type: 3}
   promptText: {fileID: 0}
   shotgunCurrentAmmo: 40
@@ -425,7 +427,6 @@ MonoBehaviour:
   shotgunTotalAmmoCap: 50
   shotgunDamage: 50
   shotgunShotsPerFire: 2
-  shotgunFireDelay: 2
   shotgunReloadTime: 1
   pistolCurrentAmmo: 35
   pistolMagSize: 15
@@ -433,15 +434,58 @@ MonoBehaviour:
   pistolTotalAmmoCap: 150
   pistolDamage: 10
   pistolShotsPerFire: 1
-  pistolFireDelay: 1
   pistolReloadTime: 1
+  rocketLauncherCurrentAmmo: 20
+  rocketLauncherMagSize: 5
+  rocketLauncherAmmoInMag: 5
+  rocketLauncherTotalAmmoCap: 150
+  rocketLauncherDamage: 100
+  rocketLauncherShotsPerFire: 1
+  rocketLauncherReloadTime: 2
   totalShotgunAmmoText: {fileID: 0}
   currentShotgunAmmoText: {fileID: 0}
   totalPistolAmmoText: {fileID: 0}
   currentPistolAmmoText: {fileID: 0}
+  totalRocketLauncherAmmoText: {fileID: 0}
+  currentRocketLauncherAmmoText: {fileID: 0}
   ammoText: {fileID: 0}
   shotgunAnimator: {fileID: 0}
   pistolAnimator: {fileID: 0}
+  rocketLauncherAnimator: {fileID: 0}
   shotgunShotSound: {fileID: 8300000, guid: 9a64fa01c1dfe0d4dbed0596fd2871d9, type: 3}
   pistolShotSound: {fileID: 8300000, guid: 039e7f26480afba469558f98739147bf, type: 3}
+  rocketLauncherShotSound: {fileID: 8300000, guid: cd019a99e61344647a2a526c2f8867c2, type: 3}
   ammoPickupSound: {fileID: 8300000, guid: 156452dc6cf9e6643a1189021d22b39b, type: 3}
+  rocketObject: {fileID: 6362725208486473944, guid: 706f6806fb0c9224996d61a5d4345c39, type: 3}
+  firePoint: {fileID: 812290100562991788}
+--- !u!1 &2894130112067718158
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 812290100562991788}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &812290100562991788
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2894130112067718158}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.108, z: 0.611}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 33757392713825438}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

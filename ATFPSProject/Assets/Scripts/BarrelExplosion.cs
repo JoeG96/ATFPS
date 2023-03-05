@@ -44,10 +44,10 @@ public class BarrelExplosion : MonoBehaviour
         foreach(Collider enemy in enemies)
         {
             Debug.Log("Enemies in enemies");
-            if (enemy.GetComponentInParent<Enemy>() != null)
+            if (enemy.GetComponentInParent<EnemyController>() != null)
             {
                 Debug.Log("Enemy Component Inside Collider");
-                enemy.GetComponentInParent<Enemy>().TakeDamage(barrelDamage);
+                enemy.GetComponentInParent<EnemyController>().TakeDamage(barrelDamage);
             }
             
         }

@@ -9,6 +9,7 @@ public class ItemPickup : MonoBehaviour
     [SerializeField] bool isArmor;
     [SerializeField] bool isSlugs;
     [SerializeField] bool isBullets;
+    [SerializeField] bool isRockets;
 
     [SerializeField] float amount;
 
@@ -34,6 +35,11 @@ public class ItemPickup : MonoBehaviour
             if (isBullets)
             {
                 other.GetComponent<GunManager>().RestorePistolAmmo(amount, this.gameObject);
+            }
+            
+            if (isRockets)
+            {
+                other.GetComponent<GunManager>().RestoreRocketLauncherAmmo(amount, this.gameObject);
             }
 
             

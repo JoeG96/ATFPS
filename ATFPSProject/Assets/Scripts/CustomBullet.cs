@@ -14,7 +14,7 @@ public class CustomBullet : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            collision.collider.GetComponent<PlayerHealth>().TakeDamage(bulletDamage);
+            collision.collider.GetComponentInParent<PlayerHealth>().TakeDamage(bulletDamage);
             Destroy(this.gameObject);
         }
 

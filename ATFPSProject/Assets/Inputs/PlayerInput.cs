@@ -100,6 +100,15 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""WeaponSelect3"",
+                    ""type"": ""Button"",
+                    ""id"": ""b59740f2-5431-483d-8731-1c26834f4482"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Escape"",
                     ""type"": ""Button"",
                     ""id"": ""2cf440bf-278e-44d3-a7c4-4ab200e727fb"",
@@ -250,6 +259,17 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8d1b726e-3dce-46d2-9d2c-58de52177f56"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""WeaponSelect3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -801,6 +821,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_InGame_Melee = m_InGame.FindAction("Melee", throwIfNotFound: true);
         m_InGame_WeaponSelect1 = m_InGame.FindAction("WeaponSelect1", throwIfNotFound: true);
         m_InGame_WeaponSelect2 = m_InGame.FindAction("WeaponSelect2", throwIfNotFound: true);
+        m_InGame_WeaponSelect3 = m_InGame.FindAction("WeaponSelect3", throwIfNotFound: true);
         m_InGame_Escape = m_InGame.FindAction("Escape", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
@@ -881,6 +902,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_InGame_Melee;
     private readonly InputAction m_InGame_WeaponSelect1;
     private readonly InputAction m_InGame_WeaponSelect2;
+    private readonly InputAction m_InGame_WeaponSelect3;
     private readonly InputAction m_InGame_Escape;
     public struct InGameActions
     {
@@ -894,6 +916,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         public InputAction @Melee => m_Wrapper.m_InGame_Melee;
         public InputAction @WeaponSelect1 => m_Wrapper.m_InGame_WeaponSelect1;
         public InputAction @WeaponSelect2 => m_Wrapper.m_InGame_WeaponSelect2;
+        public InputAction @WeaponSelect3 => m_Wrapper.m_InGame_WeaponSelect3;
         public InputAction @Escape => m_Wrapper.m_InGame_Escape;
         public InputActionMap Get() { return m_Wrapper.m_InGame; }
         public void Enable() { Get().Enable(); }
@@ -928,6 +951,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @WeaponSelect2.started -= m_Wrapper.m_InGameActionsCallbackInterface.OnWeaponSelect2;
                 @WeaponSelect2.performed -= m_Wrapper.m_InGameActionsCallbackInterface.OnWeaponSelect2;
                 @WeaponSelect2.canceled -= m_Wrapper.m_InGameActionsCallbackInterface.OnWeaponSelect2;
+                @WeaponSelect3.started -= m_Wrapper.m_InGameActionsCallbackInterface.OnWeaponSelect3;
+                @WeaponSelect3.performed -= m_Wrapper.m_InGameActionsCallbackInterface.OnWeaponSelect3;
+                @WeaponSelect3.canceled -= m_Wrapper.m_InGameActionsCallbackInterface.OnWeaponSelect3;
                 @Escape.started -= m_Wrapper.m_InGameActionsCallbackInterface.OnEscape;
                 @Escape.performed -= m_Wrapper.m_InGameActionsCallbackInterface.OnEscape;
                 @Escape.canceled -= m_Wrapper.m_InGameActionsCallbackInterface.OnEscape;
@@ -959,6 +985,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @WeaponSelect2.started += instance.OnWeaponSelect2;
                 @WeaponSelect2.performed += instance.OnWeaponSelect2;
                 @WeaponSelect2.canceled += instance.OnWeaponSelect2;
+                @WeaponSelect3.started += instance.OnWeaponSelect3;
+                @WeaponSelect3.performed += instance.OnWeaponSelect3;
+                @WeaponSelect3.canceled += instance.OnWeaponSelect3;
                 @Escape.started += instance.OnEscape;
                 @Escape.performed += instance.OnEscape;
                 @Escape.canceled += instance.OnEscape;
@@ -1090,6 +1119,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         void OnMelee(InputAction.CallbackContext context);
         void OnWeaponSelect1(InputAction.CallbackContext context);
         void OnWeaponSelect2(InputAction.CallbackContext context);
+        void OnWeaponSelect3(InputAction.CallbackContext context);
         void OnEscape(InputAction.CallbackContext context);
     }
     public interface IUIActions
