@@ -55,6 +55,11 @@ public class Rocket : MonoBehaviour
             }
 
         }
+
+        if (collision.gameObject.GetComponent<BarrelExplosion>() != null)
+        {
+            collision.gameObject.GetComponent<BarrelExplosion>().DestroyBarrel();
+        }
         
         GameObject go = Instantiate(expolosionObject, transform.position, Quaternion.identity);
         Destroy(go, 1);

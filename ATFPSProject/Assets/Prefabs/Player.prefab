@@ -288,7 +288,7 @@ MonoBehaviour:
   armorText: {fileID: 0}
   healthPickupSound: {fileID: 8300000, guid: 156452dc6cf9e6643a1189021d22b39b, type: 3}
   armorPickupSound: {fileID: 8300000, guid: 156452dc6cf9e6643a1189021d22b39b, type: 3}
-  playerDamageSound: {fileID: 0}
+  playerDamageSound: {fileID: 8300000, guid: 343ce1c5116b00940b1ad9265cf6003a, type: 3}
 --- !u!114 &5384938325839343253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,6 +307,8 @@ MonoBehaviour:
   redKeyIndicator: {fileID: 0}
   blueKeyIndicator: {fileID: 0}
   greenKeyIndicator: {fileID: 0}
+  audioSource: {fileID: 7845784213599914514}
+  keycardPickupClip: {fileID: 8300000, guid: 807819658cb7d8b4695f7b57856d1efe, type: 3}
 --- !u!82 &7845784213599914514
 AudioSource:
   m_ObjectHideFlags: 0
@@ -419,6 +421,7 @@ MonoBehaviour:
   shotgunUIObject: {fileID: 0}
   pistolUIObject: {fileID: 0}
   rocketLauncherUIObject: {fileID: 0}
+  hudWeaponManager: {fileID: 0}
   bulletHole: {fileID: 1000010844420130, guid: 4edabb1c0dde62743b137378c7d22980, type: 3}
   promptText: {fileID: 0}
   shotgunCurrentAmmo: 40

@@ -104,6 +104,7 @@ public class EnemyController : MonoBehaviour
                 levelManager.AddToCurrentScore(killScore);
                 addedScore = true;
             }
+            agent.SetDestination(transform.position);
             CapsuleCollider collider = transform.Find("EnemySprite").GetComponent<CapsuleCollider>();
             collider.enabled = false;
             transform.position = Vector3.Lerp(transform.position, deathPos, 1f * Time.deltaTime);
@@ -179,6 +180,11 @@ public class EnemyController : MonoBehaviour
                     Instantiate(bullet, firePoint.position, firePoint.rotation);
                     shotCounter = fireRate;
                     audioSource.PlayOneShot(attackSound);
+                    if (GetComponent<SpawnImps>() != null)
+                    {
+                        GetComponent<SpawnImps>().SpawnEnemy();
+                        GetComponent<SpawnImps>().SpawnEnemy();
+                    }
                 }
                 agent.SetDestination(player.position);
             }

@@ -10,13 +10,15 @@ public class CloseDoorOnTrigger : Interactable
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!doorOpen)
+        if (other == gameObject.CompareTag("Player"))
         {
-            doorOpen = false;
-            door.GetComponent<Animator>().SetBool("isOpen", doorOpen);
+            if (!doorOpen)
+            {
+                doorOpen = false;
+                door.GetComponent<Animator>().SetBool("isOpen", doorOpen);
+            }
         }
-        
-        
+
     }
 
 }

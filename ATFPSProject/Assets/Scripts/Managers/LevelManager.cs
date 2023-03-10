@@ -16,6 +16,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] GameObject WeaponCanvas;
     [SerializeField] GameObject UICanvas;
     [SerializeField] GameObject GameWinCanvas;
+    [SerializeField] GameObject GameOverCanvas;
 
     public TextMeshProUGUI scoreText;
 
@@ -27,11 +28,14 @@ public class LevelManager : MonoBehaviour
     {
         scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
         scoreManager.ResetCurrentLevelScore();
+        scoreManager.SaveFile();
 
         player = GameObject.Find("Player");
         
         levelFinished = false;
         GameWinCanvas.SetActive(false); ;
+        Time.timeScale = 1f;
+
     }
 
 
@@ -79,6 +83,7 @@ public class LevelManager : MonoBehaviour
         pauseMenu.SetActive(true);
         WeaponCanvas.SetActive(false);
         UICanvas.SetActive(false);
+        GameOverCanvas.SetActive(false);
         player.GetComponent<GunManager>().enabled = false;
         player.GetComponent<PlayerMotor>().enabled = false;
         player.GetComponent<PlayerLook>().enabled = false;
@@ -92,6 +97,7 @@ public class LevelManager : MonoBehaviour
         pauseMenu.SetActive(false);
         WeaponCanvas.SetActive(true);
         UICanvas.SetActive(true);
+        GameOverCanvas.SetActive(false);
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         StartCoroutine(Delay(1f));
@@ -114,18 +120,32 @@ public class LevelManager : MonoBehaviour
 
     public void LevelWinScreen()
     {
-
-
         GameWinCanvas.SetActive(true);
         pauseMenu.SetActive(false);
         WeaponCanvas.SetActive(false);
         UICanvas.SetActive(false);
+        GameOverCanvas.SetActive(false);
         player.GetComponent<GunManager>().enabled = false;
         player.GetComponent<PlayerMotor>().enabled = false;
         player.GetComponent<PlayerLook>().enabled = false;
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.Confined;
+        scoreManager.SaveFile();
 
+    }
 
+    public void GameOver()
+    {
+        GameWinCanvas.SetActive(false);
+        pauseMenu.SetActive(false);
+        WeaponCanvas.SetActive(false);
+        UICanvas.SetActive(false);
+        GameOverCanvas.SetActive(true);
+        player.GetComponent<GunManager>().enabled = false;
+        player.GetComponent<PlayerMotor>().enabled = false;
+        player.GetComponent<PlayerLook>().enabled = false;
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.Confined;
+        scoreManager.SaveFile();
     }
 }

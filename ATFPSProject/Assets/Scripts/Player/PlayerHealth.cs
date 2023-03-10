@@ -91,13 +91,21 @@ public class PlayerHealth : MonoBehaviour
 
         if (health <= 0)
         {
-            Debug.Log("Player Dead");
-            Scene currentScene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(currentScene.buildIndex);
+            PlayerDied();
+            
         }
         GetComponent<AudioSource>().PlayOneShot(playerDamageSound);
 
 
+    }
+
+    public void PlayerDied()
+    {
+        Debug.Log("Player Dead");
+
+        var levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+        levelManager.GameOver();
+        
     }
 
     public void RestoreHealth(float healAmount, GameObject pickup)

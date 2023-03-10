@@ -8,6 +8,14 @@ public class PlayerInventory : MonoBehaviour
 
     public bool hasRedKey, hasBlueKey, hasGreenKey;
     [SerializeField] RawImage redKeyIndicator, blueKeyIndicator, greenKeyIndicator;
+    public AudioSource audioSource;
+    public AudioClip keycardPickupClip;
+
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();    
+    }
 
     public void CheckKeys()
     {
@@ -25,5 +33,27 @@ public class PlayerInventory : MonoBehaviour
         {
             blueKeyIndicator.color = new Color(blueKeyIndicator.color.r, blueKeyIndicator.color.g, blueKeyIndicator.color.b, 255);
         }
+    }
+
+    public void PickupKey(int Card)
+    {
+
+        if (Card == 0)
+        {
+            hasRedKey = true;
+        }
+
+        if (Card == 1)
+        {
+            hasGreenKey = true;
+        }
+        
+        if (Card == 2)
+        {
+            hasBlueKey = true;
+        }
+
+        audioSource.PlayOneShot(keycardPickupClip);
+
     }
 }

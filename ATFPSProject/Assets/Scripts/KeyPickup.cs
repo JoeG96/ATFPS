@@ -6,28 +6,26 @@ public class KeyPickup : MonoBehaviour
 {
 
     public bool isRedKey, isBlueKey, isGreenKey;
-    public AudioSource audioSource;
-    public AudioClip keyCardPickupSound;
+
 
     private void OnTriggerEnter(Collider other)
     {
         
         if (other.CompareTag("Player"))
         {
-            audioSource.PlayOneShot(keyCardPickupSound, 0.5f);
             if (isRedKey)
             {
-                other.GetComponent<PlayerInventory>().hasRedKey = true;
+                other.GetComponent<PlayerInventory>().PickupKey(0);
             }
             
             if (isBlueKey)
             {
-                other.GetComponent<PlayerInventory>().hasBlueKey = true;
+                other.GetComponent<PlayerInventory>().PickupKey(2);
             }
 
             if (isGreenKey)
             {
-                other.GetComponent<PlayerInventory>().hasGreenKey = true;
+                other.GetComponent<PlayerInventory>().PickupKey(1);
             }
             
             other.GetComponent<PlayerInventory>().CheckKeys();
