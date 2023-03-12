@@ -18,4 +18,9 @@ public class LoadScene : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene(currentScene.buildIndex);
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
